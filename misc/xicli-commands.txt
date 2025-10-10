@@ -1,0 +1,41 @@
+# xicli raid show --format json
+{"cm7_r1_d2": {"active": true, "block_size": 4096, "config": true, "devices": [[0, "/dev/nvme15n1", ["online"]], [1, "/dev/nvme16n1", ["online"]]], "devices_health": null, "devices_wear": null, "group_size": 2, "level": "1", "memory_usage_mb": 2048, "name": "cm7_r1_d2", "serials": ["XE20A15A04C3_1", "XE20A15904C3_1"], "size": "1788 GiB", "sparepool": "-", "state": ["online", "initialized"], "strip_size": 16, "uuid": "76913AB9-40EC-438F-8E78-A04321F44E44"}, "ps1010_r6_d20": {"active": true, "block_size": 4096, "config": true, "devices": [[0, "/dev/nvme11n1", ["online"]], [1, "/dev/nvme12n1", ["online"]], [2, "/dev/nvme14n1", ["online"]], [3, "/dev/nvme13n1", ["online"]], [4, "/dev/nvme0n1", ["online"]], [5, "/dev/nvme1n1", ["online"]], [6, "/dev/nvme2n1", ["online"]], [7, "/dev/nvme17n1", ["online"]], [8, "/dev/nvme18n1", ["online"]], [9, "/dev/nvme19n1", ["online"]], [10, "/dev/nvme20n1", ["online"]], [11, "/dev/nvme21n1", ["online"]], [12, "/dev/nvme22n1", ["online"]], [13, "/dev/nvme3n1", ["online"]], [14, "/dev/nvme4n1", ["online"]], [15, "/dev/nvme5n1", ["online"]], [16, "/dev/nvme6n1", ["online"]], [17, "/dev/nvme7n1", ["online"]], [18, "/dev/nvme8n1", ["online"]], [19, "/dev/nvme9n1", ["online"]]], "devices_health": null, "devices_wear": null, "group_size": 20, "level": "6", "memory_usage_mb": 2048, "name": "ps1010_r6_d20", "serials": ["BID7N0256I0108A4U_1", "BID7N0255I0608EO5_1", "BID7N0255I0608ER9_1", "BID7N0255I0608EO6_1", "BID7N0255I0608ET8_1", "BID7N0256I0108A4T_1", "BID7N0256I0108A56_1", "BID7N0256I1208828_1", "BID7N0256I120886P_1", "BID7N0256I0108A0J_1", "BID7N0256I0108A68_1", "BID7N0256I0108A45_1", "BID7N0256I120886L_1", "BID7N0256I0108A69_1", "BID7N0256I0108A1S_1", "BID7N0255I0608ER8_1", "BID7N0255I0608EOM_1", "BID7N0256I0108A48_1", "BID7N0256I0108A3K_1", "BID7N0256I1208823_1"], "size": "128767 GiB", "sparepool": "-", "state": ["online", "initialized"], "strip_size": 16, "uuid": "64530F34-6B0A-457D-BB04-71F40427F689"}}
+
+# xicli raid show --extended --format json
+{"cm7_r1_d2": {"active": true, "block_size": 4096, "config": true, "cpu_allowed": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], "devices": [[0, "/dev/nvme15n1", ["online"]], [1, "/dev/nvme16n1", ["online"]]], "devices_health": ["100%", "100%"], "devices_wear": ["0%", "0%"], "group_size": 2, "init_prio": 50, "level": "1", "memory_limit_mb": 0, "memory_prealloc_mb": 2048, "memory_usage_mb": 2048, "name": "cm7_r1_d2", "recon_prio": 50, "request_limit": 0, "restripe_prio": 100, "sched_enabled": 0, "serials": ["XE20A15A04C3_1", "XE20A15904C3_1"], "size": "1788 GiB", "sparepool": "-", "state": ["online", "initialized"], "strip_size": 16, "uuid": "76913AB9-40EC-438F-8E78-A04321F44E44"}, "ps1010_r6_d20": {"active": true, "adaptive_merge": 0, "block_size": 4096, "config": true, "cpu_allowed": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31], "devices": [[0, "/dev/nvme11n1", ["online"]], [1, "/dev/nvme12n1", ["online"]], [2, "/dev/nvme14n1", ["online"]], [3, "/dev/nvme13n1", ["online"]], [4, "/dev/nvme0n1", ["online"]], [5, "/dev/nvme1n1", ["online"]], [6, "/dev/nvme2n1", ["online"]], [7, "/dev/nvme17n1", ["online"]], [8, "/dev/nvme18n1", ["online"]], [9, "/dev/nvme19n1", ["online"]], [10, "/dev/nvme20n1", ["online"]], [11, "/dev/nvme21n1", ["online"]], [12, "/dev/nvme22n1", ["online"]], [13, "/dev/nvme3n1", ["online"]], [14, "/dev/nvme4n1", ["online"]], [15, "/dev/nvme5n1", ["online"]], [16, "/dev/nvme6n1", ["online"]], [17, "/dev/nvme7n1", ["online"]], [18, "/dev/nvme8n1", ["online"]], [19, "/dev/nvme9n1", ["online"]]], "devices_health": ["100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%", "100%"], "devices_wear": ["0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%", "0%"], "group_size": 20, "init_prio": 50, "level": "6", "memory_limit_mb": 0, "memory_prealloc_mb": 2048, "memory_usage_mb": 2048, "merge_read_enabled": 0, "merge_read_max_usecs": 1000, "merge_read_wait_usecs": 300, "merge_write_enabled": 0, "merge_write_max_usecs": 1000, "merge_write_wait_usecs": 300, "name": "ps1010_r6_d20", "recon_prio": 50, "request_limit": 0, "restripe_prio": 100, "sched_enabled": 0, "sdc_prio": 50, "serials": ["BID7N0256I0108A4U_1", "BID7N0255I0608EO5_1", "BID7N0255I0608ER9_1", "BID7N0255I0608EO6_1", "BID7N0255I0608ET8_1", "BID7N0256I0108A4T_1", "BID7N0256I0108A56_1", "BID7N0256I1208828_1", "BID7N0256I120886P_1", "BID7N0256I0108A0J_1", "BID7N0256I0108A68_1", "BID7N0256I0108A45_1", "BID7N0256I120886L_1", "BID7N0256I0108A69_1", "BID7N0256I0108A1S_1", "BID7N0255I0608ER8_1", "BID7N0255I0608EOM_1", "BID7N0256I0108A48_1", "BID7N0256I0108A3K_1", "BID7N0256I1208823_1"], "size": "128767 GiB", "sparepool": "-", "state": ["online", "initialized"], "strip_size": 16, "uuid": "64530F34-6B0A-457D-BB04-71F40427F689"}}
+
+# xicli drive faulty-count show --format json
+{"/dev/nvme0n1": 0, "/dev/nvme11n1": 0, "/dev/nvme12n1": 0, "/dev/nvme13n1": 0, "/dev/nvme14n1": 0, "/dev/nvme15n1": 0, "/dev/nvme16n1": 0, "/dev/nvme17n1": 0, "/dev/nvme18n1": 0, "/dev/nvme19n1": 0, "/dev/nvme1n1": 0, "/dev/nvme20n1": 0, "/dev/nvme21n1": 0, "/dev/nvme22n1": 0, "/dev/nvme2n1": 0, "/dev/nvme3n1": 0, "/dev/nvme4n1": 0, "/dev/nvme5n1": 0, "/dev/nvme6n1": 0, "/dev/nvme7n1": 0, "/dev/nvme8n1": 0, "/dev/nvme9n1": 0}
+
+# xicli license show --format json
+{"Kernel version": "6.8.0-60-generic", "created": "2025-7-31", "crypto_version": "1", "disks": "22", "disks_in_use": "22", "expired": "2125-7-31", "hwkey": "40919C3971C03A2F", "levels": "70", "license_key": "9F2F43944CAB82C3404A7A83A38A9232DFE49928F5ECE054A219FD3FF3461384F93EB67D631C13747784C27C89694AB595644DB50CC3ED7BF03215E2A65D5567A79EF8ACB29ACAA39584DC27F55C403B6A5F3AD970000D680DCF35A49599498305741BB739C02DD4196586F3BA0EF796C2C1A4C041DA56C42719FD9E16533B1D", "status": "valid", "type": "nvme", "version": "1"}
+
+# xicli mail show --format json
+{"recipient": "", "level": ""}
+
+# xicli pool show --format json
+{"name": "", "devices": "", "serials": "", "sizes": "", "state": ""}
+
+# xicli settings auth show --format json
+{"host": "localhost", "port": 6066}
+
+# xicli settings cluster show --format json
+{"pool_autoactivate": 1, "raid_autostart": 1}
+
+# xicli settings eula show --format json
+{"status": "accepted"}
+
+# xicli settings faulty-count show --format json
+{"faulty_count_threshold": 3}
+
+# xicli settings log show --format json
+{"level": "info", "log directory": "/var/log/xraid/"}
+
+# xicli settings mail show --format json
+{"polling_interval": 10, "progress_polling_interval": 10}
+
+# xicli settings pool show --format json
+{"replace_delay": 180}
+
+# xicli settings scanner show --format json
+{"loed_enabled": 1, "scanner_polling_interval": 1, "smart_polling_interval": 86400}

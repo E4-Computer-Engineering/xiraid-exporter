@@ -1,0 +1,76 @@
+---
+version: 2
+before:
+  hooks:
+    - go mod download
+
+builds:
+  - id: xiraid-exporter
+    main: ./cmd/xiraid-exporter
+    binary: xiraid-exporter
+    ldflags:
+      - -s -w
+      - -X github.com/prometheus/common/version.Version={{.Version}}
+      - -X github.com/prometheus/common/version.Revision={{.Commit}}
+      - -X github.com/prometheus/common/version.Branch={{.Branch}}
+      - -X github.com/prometheus/common/version.BuildUser=goreleaser
+      - -X github.com/prometheus/common/version.BuildDate={{.Date}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm
+      - arm64
+    goarm:
+     - "7"
+
+archives:
+  - id: xiraid-exporter-archive
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- .Version }}_
+      {{- .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- with .Arm }}v{{ . }}{{ end }}
+      {{- with .Mips }}_{{ . }}{{ end }}
+      {{- if not (eq .Amd64 "v1") }}{{ .Amd64 }}{{ end }}
+    builds:
+      - xiraid-exporter
+    files:
+      - LICENSE*
+      - README*
+
+nfpms:
+  - id: xiraid-exporter
+    package_name: xiraid-exporter
+    bindir: /usr/bin
+    vendor: E4 computer engineering
+    homepage: https://github.com/E4-Computer-Engineering/xiraid-exporter
+    license: Apache-2.0
+    maintainer: E4 Computer Engineering <info@e4company.com>
+    section: misc
+    description: |-
+      Prometheus exporter for Xiraid RAID systems.
+      Collects metrics from Xiraid arrays using the xicli command-line tool.
+    formats:
+      - deb
+      - rpm
+
+checksum:
+  name_template: 'checksums.txt'
+
+snapshot:
+  version_template: "{{ incpatch .Version }}-next"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+      - '^chore:'
+      - Merge pull request
+      - Merge branch
