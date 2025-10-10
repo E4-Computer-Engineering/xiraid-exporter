@@ -1,5 +1,4 @@
 # Binaries
-xiraid-exporter
 *.exe
 *.exe~
 *.dll

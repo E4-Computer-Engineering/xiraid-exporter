@@ -1,9 +1,9 @@
 # Xiraid Exporter
 
 [![build](https://github.com/E4-Computer-Engineering/xiraid-exporter/actions/workflows/build.yml/badge.svg)](https://github.com/E4-Computer-Engineering/xiraid-exporter/actions/workflows/build.yml)
-[![Latest GitHub release](https://img.shields.io/github/release/E4-Computer-Engineering/xiraid-exporter.svg)](https://github.com/E4-Computer-Engineering/xiraid-exporter/releases)
-[![GitHub license](https://img.shields.io/github/license/E4-Computer-Engineering/xiraid-exporter)](https://github.com/E4-Computer-Engineering/xiraid-exporter/blob/main/LICENSE)
-[![GitHub all releases](https://img.shields.io/github/downloads/E4-Computer-Engineering/xiraid-exporter/total)](https://github.com/E4-Computer-Engineering/xiraid-exporter/releases)
+![Latest GitHub release](https://img.shields.io/github/release/E4-Computer-Engineering/xiraid-exporter.svg)
+[![GitHub license](https://img.shields.io/github/license/E4-Computer-Engineering/xiraid-exporter)](https://github.com/E4-Computer-Engineering/xiraid-exporter/blob/master/LICENSE)
+![GitHub all releases](https://img.shields.io/github/downloads/E4-Computer-Engineering/xiraid-exporter/total)
 
 A Prometheus exporter for Xiraid RAID systems. This exporter collects metrics from Xiraid arrays using the `xicli` command-line tool and exposes them in Prometheus format.
 
