@@ -58,6 +58,30 @@ nfpms:
     formats:
       - deb
       - rpm
+    contents:
+      - src: ./resources/systemd/xiraid_exporter.service
+        dst: /usr/lib/systemd/system/xiraid_exporter.service
+        file_info:
+          owner: root
+          group: root
+          mode: 0644
+      - src: ./LICENSE
+        dst: /usr/share/doc/xiraid-exporter/copyright
+        file_info:
+          owner: root
+          group: root
+          mode: 0644
+    scripts:
+      preinstall: resources/scripts/pre-install.sh
+      postinstall: resources/scripts/post-install.sh
+      preremove: resources/scripts/pre-remove.sh
+      postremove: resources/scripts/post-remove.sh
+    deb:
+      lintian_overrides:
+        - statically-linked-binary
+        - changelog-file-missing-in-native-package
+        - no-manual-page
+        - maintainer-script-calls-systemctl
 
 checksum:
   name_template: 'checksums.txt'
@@ -69,8 +93,15 @@ changelog:
   sort: asc
   filters:
     exclude:
-      - '^docs:'
-      - '^test:'
-      - '^chore:'
+      - '^build(\(.+\))?:'
+      - '^chore(\(.+\))?:'
+      - '^cd(\(.+\))?:'
+      - '^ci(\(.+\))?:'
+      - '^cicd(\(.+\))?:'
+      - '^docker(\(.+\))?:'
+      - '^docs(\(.+\))?:'
+      - '^refactor(\(.+\))?:'
+      - '^test(\(.+\))?:'
       - Merge pull request
       - Merge branch
+      - go mod tidy

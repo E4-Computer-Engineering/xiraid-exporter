@@ -1,5 +1,5 @@
 [Unit]
-Description=NVMe Prom Exporter
+Description=xiRAID Prom Exporter
 After=network-online.target
 
 [Service]
@@ -8,9 +8,9 @@ Type=simple
 User=root
 Group=root
 
-ExecStart=/usr/bin/nvme_exporter
+ExecStart=/usr/bin/xiraid-exporter
 
-SyslogIdentifier=nvme_exporter
+SyslogIdentifier=xiraid_exporter
 
 Restart=always
 RestartSec=1
