@@ -1,5 +1,6 @@
 # Xiraid Exporter
 
+[![Go report card](https://goreportcard.com/badge/github.com/E4-Computer-Engineering/xiraid-exporter)](https://goreportcard.com/report/github.com/E4-Computer-Engineering/xiraid-exporter)
 [![build](https://github.com/E4-Computer-Engineering/xiraid-exporter/actions/workflows/build.yml/badge.svg)](https://github.com/E4-Computer-Engineering/xiraid-exporter/actions/workflows/build.yml)
 ![Latest GitHub release](https://img.shields.io/github/release/E4-Computer-Engineering/xiraid-exporter.svg)
 [![GitHub license](https://img.shields.io/github/license/E4-Computer-Engineering/xiraid-exporter)](https://github.com/E4-Computer-Engineering/xiraid-exporter/blob/master/LICENSE)
