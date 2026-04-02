@@ -15,12 +15,16 @@ type FlexInt int
 
 func (f *FlexInt) UnmarshalJSON(data []byte) error {
 	var n int
-	if err := json.Unmarshal(data, &n); err == nil {
+
+	err := json.Unmarshal(data, &n)
+	if err == nil {
 		*f = FlexInt(n)
+
 		return nil
 	}
 	// Non-numeric value (e.g. "-"): treat as zero.
 	*f = 0
+
 	return nil
 }
 
