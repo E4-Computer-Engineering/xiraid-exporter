@@ -53,7 +53,7 @@ type RaidInfo struct {
 	MergeWriteEnabled int             `json:"merge_write_enabled,omitempty"`
 }
 
-// LicenseInfo represents the output of 'xicli license show --format json'.
+// LicenseInfo represents the output of 'xicli license show'.
 type LicenseInfo struct {
 	Status        string `json:"status"`
 	Type          string `json:"type"`
@@ -178,9 +178,9 @@ func (x *Executor) GetFaultyCount() (map[string]int, error) {
 	return faultyCounts, nil
 }
 
-// GetLicenseInfo executes 'xicli license show --format json'.
+// GetLicenseInfo executes 'xicli license show'.
 func (x *Executor) GetLicenseInfo() (*LicenseInfo, error) {
-	output, err := x.executeCommand("license", "show", "--format", "json")
+	output, err := x.executeCommand("license", "show")
 	if err != nil {
 		return nil, fmt.Errorf("failed to execute xicli license show: %w", err)
 	}
