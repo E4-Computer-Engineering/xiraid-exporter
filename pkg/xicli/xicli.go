@@ -9,6 +9,21 @@ import (
 	"time"
 )
 
+// FlexInt is an int that can be unmarshalled from either a JSON number or a
+// non-numeric string (e.g. "-"). Non-numeric strings are treated as zero.
+type FlexInt int
+
+func (f *FlexInt) UnmarshalJSON(data []byte) error {
+	var n int
+	if err := json.Unmarshal(data, &n); err == nil {
+		*f = FlexInt(n)
+		return nil
+	}
+	// Non-numeric value (e.g. "-"): treat as zero.
+	*f = 0
+	return nil
+}
+
 // Executor handles execution of xicli commands.
 type Executor struct {
 	xicliPath string
@@ -32,7 +47,7 @@ type RaidInfo struct {
 	DevicesHealth     []string        `json:"devices_health"`
 	DevicesWear       []string        `json:"devices_wear"`
 	GroupSize         int             `json:"group_size"`
-	MemoryUsageMB     int             `json:"memory_usage_mb"`
+	MemoryUsageMB     FlexInt         `json:"memory_usage_mb"`
 	MemoryPreallocMB  int             `json:"memory_prealloc_mb,omitempty"`
 	MemoryLimitMB     int             `json:"memory_limit_mb,omitempty"`
 	BlockSize         int             `json:"block_size"`
